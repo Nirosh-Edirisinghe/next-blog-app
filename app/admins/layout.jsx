@@ -1,11 +1,13 @@
 import { assets } from "@/assets/assets";
 import SlideBar from "@/Components/AdminComponents/SlideBar";
 import Image from "next/image";
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Layout({ children }) {
   return (
     <>
       <div className="flex">
+        <ToastContainer theme="dark"/>
         <SlideBar />
         <div className="flex flex-col w-full">
           <div className="flex items-center justify-between w-full py-3 max-h-[600px] px-12 border-b border-black">
