@@ -7,12 +7,15 @@ const BlogList = () => {
   const [menu, setMenu] = useState('All');
   const [blogs,setBlogs] = useState([])
 
-  const fetchBlogs = async ()=>{
+  const fetchBlogs = async () => {
+  try {
     const response = await axios.get('/api/blog');
     setBlogs(response.data.blogs);
     console.log(response.data.blogs);
-    
+  } catch (error) {
+    console.error('Failed to fetch blogs:', error);
   }
+};
 
   useEffect(() => {
   fetchBlogs();
